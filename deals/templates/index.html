@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Система управления продажами</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .container { text-align: center; padding: 40px; }
+        .logo { font-size: 60px; margin-bottom: 20px; }
+        h1 { font-size: 36px; margin-bottom: 10px; color: #e94560; }
+        p { font-size: 18px; color: #a8b2c1; margin-bottom: 40px; }
+        .buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            padding: 15px 35px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: scale(1.05); }
+        .btn-admin {
+            background: #e94560;
+            color: white;
+        }
+        .btn-api {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        .stats {
+            margin-top: 50px;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            padding: 20px 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        .stat-number { font-size: 32px; font-weight: bold; color: #e94560; }
+        .stat-label { font-size: 14px; color: #a8b2c1; margin-top: 5px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="logo">📊</div>
+    <h1>Система управления продажами</h1>
+    <p>Глазовский государственный инженерно-педагогический университет</p>
+
+    <div class="buttons">
+        <a href="/admin" class="btn btn-admin">🔧 Панель администратора</a>
+        <a href="/api" class="btn btn-api">⚡ REST API</a>
+    </div>
+
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">{{ clients_count }}</div>
+            <div class="stat-label">Клиентов</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ deals_count }}</div>
+            <div class="stat-label">Сделок</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ tasks_count }}</div>
+            <div class="stat-label">Задач</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
